@@ -2,7 +2,7 @@ var test = require("tape");
 var fe = require("../lib");
 
 test("list all files", function (t) {
-  var files = fe("files").sort()
+  var files = fe(__dirname + "/files").sort()
     , expected = [
         "README",
         "four.rb",
@@ -17,7 +17,7 @@ test("list all files", function (t) {
 });
 
 test("list all .js files", function (t) {
-  var files = fe("files", "js").sort()
+  var files = fe(__dirname + "/files", "js").sort()
     , expected = [
         "index.js",
         "one.js",
@@ -30,7 +30,7 @@ test("list all .js files", function (t) {
 });
 
 test("list all .js files but exclude index file", function (t) {
-  var files = fe("files", "js", true).sort()
+  var files = fe(__dirname + "/files", "js", true).sort()
     , expected = [
         "one.js",
         "three.js",
