@@ -1,40 +1,12 @@
 var test = require("tape");
-var fe = require("../lib");
+var fe = require("..");
 
-test("list all files", function (t) {
+test("list all non-index js files", function (t) {
   var files = fe(__dirname + "/files").sort()
     , expected = [
-        "README",
-        "four.rb",
-        "index.js",
-        "one.js",
-        "three.js",
-        "two.js"
-      ];
-
-  t.deepEqual(files, expected);
-  t.end();
-});
-
-test("list all .js files", function (t) {
-  var files = fe(__dirname + "/files", "js").sort()
-    , expected = [
-        "index.js",
-        "one.js",
-        "three.js",
-        "two.js"
-      ];
-
-  t.deepEqual(files, expected);
-  t.end();
-});
-
-test("list all .js files but exclude index file", function (t) {
-  var files = fe(__dirname + "/files", "js", true).sort()
-    , expected = [
-        "one.js",
-        "three.js",
-        "two.js"
+        "one",
+        "three",
+        "two"
       ];
 
   t.deepEqual(files, expected);

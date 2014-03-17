@@ -1,1 +1,1 @@
-module.exports = require("./lib/files-ext");
+module.exports = require(__dirname + "/lib");
